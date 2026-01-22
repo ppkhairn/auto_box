@@ -11,20 +11,20 @@ root_dir = curr_dir.parent
 assets_dir = root_dir / "assets"
 # print(assets_dir)
 
-# 1. Setup Client
+# Setup Client
 client = genai.Client(api_key="AIzaSyATnC9AF6BaZRRv7TaxLedomtskDrOwy50")
 model_id = "gemini-2.0-flash"
 
-# 2. Load your image
+# Load the image
 img_path = assets_dir / "cat.jpg"
 image = PIL.Image.open(img_path)
 width, height = image.size
 
-# 3. Define the prompt
+# Define the prompt
 # We tell the model exactly what to find and the format we need.
 prompt = "Detect a cat in this image. Return the bounding boxes in [ymin, xmin, ymax, xmax] format."
 
-# 4. Call the model
+# call the model
 response = client.models.generate_content(
     model=model_id,
     contents=[image, prompt]
