@@ -1,10 +1,15 @@
 import PIL.Image
 import PIL.ImageDraw
+import os
 from google import genai
 from google.genai import types
+from dotenv import load_dotenv
 
+load_dotenv()
 #Setup Client
-client = genai.Client(api_key="AIzaSyATnC9AF6BaZRRv7TaxLedomtskDrOwy50")
+gemini_key=os.getenv("gemini_api_key")
+# print(gemini_key)
+client = genai.Client(api_key=gemini_key)
 model_id = "gemini-2.0-flash"
 
 #Call the model

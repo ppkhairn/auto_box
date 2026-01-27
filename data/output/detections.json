@@ -1,0 +1,17 @@
+[
+    {
+        "image_id": "cat.jpg",
+        "detections": [
+            {
+                "label": "cat",
+                "box": [
+                    64.0,
+                    340.0,
+                    957.0,
+                    635.0
+                ],
+                "confidence": 0.996
+            }
+        ]
+    }
+]
